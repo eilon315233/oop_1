@@ -99,7 +99,7 @@ class GameLogicTest {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            fail("Error reading file: " + file.getName());
+            fail("Error reading fil: " + file.getName());
         }
         return content.toString();
     }
