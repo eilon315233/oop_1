@@ -188,6 +188,7 @@ public class GameLogic implements PlayableLogic{
         resetPieceHistory();
         setIDPiece();
         this.killedPieces.clear();
+        this.latMovedPiece.clear();
         this.secondTurn=true;
     }
     @Override

@@ -67,15 +67,6 @@ class GameLogicTest {
                 Position to = moves.get(i + 1);
                 boolean result = gameLogic.move(from, to);
                 assertTrue(result); // Ensure each move is successful
-                /*
-                if(i==26&&!hasDone)//22 is the king move
-                {
-                    ((GameLogic)gameLogic).undoLastMove();
-                    hasDone=true;
-                    i-=2;
-
-                }
-                 */
             }
 
             // Restore the original System.out
