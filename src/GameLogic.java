@@ -261,6 +261,8 @@ public class GameLogic implements PlayableLogic{
             {
                 eatSpecific(new Position(x,y-1),this.bord[pos.getX()][pos.getY()]);
             }
+            else if(y==2&&(x==0||x==10))
+                eatSpecific(new Position(x,y-1),this.bord[pos.getX()][pos.getY()]);
             //Enemy between them - eat
             else if(this.bord[x][y-2] instanceof Pawn && this.bord[x][y-2].owner.isPlayerOne()==this.bord[x][y].owner.isPlayerOne())
             {
@@ -274,7 +276,9 @@ public class GameLogic implements PlayableLogic{
             {
                 eatSpecific(new Position(x,y+1),this.bord[pos.getX()][pos.getY()]);
             }
-            //Enemy between them - eat
+            else if(y==8&&(x==0||x==10))
+                eatSpecific(new Position(x,y+1),this.bord[pos.getX()][pos.getY()]);
+                //Enemy between them - eat
             else if(this.bord[x][y+2] instanceof Pawn &&this.bord[x][y+2].owner.isPlayerOne()==this.bord[x][y].owner.isPlayerOne())
             {
                 eatSpecific(new Position(x,y+1),this.bord[pos.getX()][pos.getY()]);
@@ -287,6 +291,9 @@ public class GameLogic implements PlayableLogic{
             {
                 eatSpecific(new Position(x+1,y),this.bord[pos.getX()][pos.getY()]);
             }
+            else if(x==8&&(y==0||y==10)){
+                eatSpecific(new Position(x+1,y),this.bord[pos.getX()][pos.getY()]);
+            }
             //Enemy between them - eat
             else if(this.bord[x+2][y] instanceof Pawn &&this.bord[x+2][y].owner.isPlayerOne()==this.bord[x][y].owner.isPlayerOne())
             {
@@ -297,6 +304,9 @@ public class GameLogic implements PlayableLogic{
         if(x>0&&this.bord[x-1][y] instanceof Pawn &&this.bord[x][y].owner.isPlayerOne()!=this.bord[x-1][y].owner.isPlayerOne()){
             if(x-1==0)//On the edge - eat
             {
+                eatSpecific(new Position(x-1,y),this.bord[pos.getX()][pos.getY()]);
+            }
+            else if(x==2&&(y==0||y==10)){
                 eatSpecific(new Position(x-1,y),this.bord[pos.getX()][pos.getY()]);
             }
             //Enemy between them - eat
