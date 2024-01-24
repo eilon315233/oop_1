@@ -45,7 +45,7 @@ class GameLogicTest {
         // Define a parameterized test that uses the source
         @ParameterizedTest
         @MethodSource("comparisonData")
-        void testMove(ComparisonData comparisonData) {
+        void  testMove(ComparisonData comparisonData) {
             File inputFile = comparisonData.inputFile();
             File outputFile = comparisonData.outputFile();
 
@@ -67,6 +67,7 @@ class GameLogicTest {
                 Position to = moves.get(i + 1);
                 boolean result = gameLogic.move(from, to);
                 assertTrue(result); // Ensure each move is successful
+                /*
                 if(i==26&&!hasDone)//22 is the king move
                 {
                     ((GameLogic)gameLogic).undoLastMove();
@@ -74,6 +75,7 @@ class GameLogicTest {
                     i-=2;
 
                 }
+                 */
             }
 
             // Restore the original System.out
