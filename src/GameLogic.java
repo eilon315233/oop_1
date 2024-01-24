@@ -67,16 +67,6 @@ public class GameLogic implements PlayableLogic{
         //Add to piece history
         this.bord[bx][by].addMove(b);
 
-        //Update the piece distance
-        /*
-        if(ax==bx)
-            this.bord[bx][by].addDistance(Math.abs(ay-by));
-        else
-            this.bord[bx][by].addDistance(Math.abs(ax-bx));
-
-         */
-        //System.out.println("The pice distance: "+this.bord[bx][by].getDistance());
-
         //If king - can't eat
         if(this.bord[bx][by] instanceof King)//Can't eat
         {
@@ -92,11 +82,6 @@ public class GameLogic implements PlayableLogic{
         this.latMovedPiece.add(this.bord[bx][by]);
         //The next player turn
         secondTurn = !secondTurn;
-
-        //System.out.println("The pice distance: "+this.bord[bx][by].getDistance());
-        //if(this.bord[bx][by] instanceof Pawn)
-            //System.out.println("The pice Kills: "+((Pawn)(this.bord[bx][by])).getKills());
-
         //The move has done
         isGameFinished();
         return true;
