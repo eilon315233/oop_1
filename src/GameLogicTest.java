@@ -18,7 +18,7 @@ class GameLogicTest {
             File outputDirectory = new File("src/test/resources/outputs");
 
             if (!inputDirectory.exists() || !outputDirectory.exists()) {
-                fail("Input or output directory not found");
+                fail("Input or output directory not foun");
             }
 
             File[] inputFiles = inputDirectory.listFiles();
